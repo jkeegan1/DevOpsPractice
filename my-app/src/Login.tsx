@@ -13,6 +13,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
 
+import "./login.css";
 
 export default function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -24,6 +25,7 @@ export default function Login() {
   ) => {
     event.preventDefault();
   };
+
   return (
     <Card
       sx={{
@@ -35,6 +37,7 @@ export default function Login() {
         ml: "30%",
         mt: "10%",
         flexDirection: "column",
+        backgroundColor: "#1a1a2b",
       }}
     >
       <Box sx={{ ml: "30%" }}>
@@ -53,16 +56,27 @@ export default function Login() {
               width: "15vw",
               height: "15vh",
               display: "flex",
+              color: "white",
             }}
           ></AccountCircle>
           <Box sx={{ ml: "20%" }}>
-            <Typography variant="h3" component="h3">
+            <Typography variant="h3" component="h3" sx={{ color: "white" }}>
               Sign in
             </Typography>
           </Box>
+
           <TextField label="Username" id="UnInput" />
-          <FormControl sx={{}} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">
+
+          <FormControl
+            sx={{ color: "white", borderColor: "white" }}
+            variant="outlined"
+          >
+            <InputLabel
+              htmlFor="outlined-adornment-password"
+              sx={{
+                color: "white",
+              }}
+            >
               Password
             </InputLabel>
             <OutlinedInput
@@ -71,6 +85,7 @@ export default function Login() {
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    sx={{ color: "white" }}
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
